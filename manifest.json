@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Udemy Dual Subtitles",
+  "version": "0.1.0",
+  "description": "Udemy 영어 자막 아래에 한국어 번역을 표시합니다.",
+  "minimum_chrome_version": "138",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.udemy.com/*",
+        "https://udemy.com/*"
+      ],
+      "js": [
+        "dictionary-terms.js",
+        "dictionary.js",
+        "translator.js",
+        "caption.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ]
+}
